@@ -24,12 +24,10 @@ class Game:
                     sys.exit()
             self.update()
 
-
-
     def update(self):
-        FramePerSec = pygame.time.Clock()
+        frame_per_sec = pygame.time.Clock()
         pygame.display.update()
-        FramePerSec.tick(60)
+        frame_per_sec.tick(60)
         return
         # TODO: Actualiza los graficos de los objetos con su posicion
         # TODO: Corre update() en el PhysicsHandler
