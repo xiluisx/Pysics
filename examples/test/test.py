@@ -8,7 +8,7 @@ obj = game.add_object(os.path.dirname(__file__) + "\img\RedBall.png")
 
 
 def update():
-    obj.pos.x += 1
+    obj.pos += Vector2(1, 0)
 
 
 game.add_update(update)
