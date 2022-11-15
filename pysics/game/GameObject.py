@@ -8,6 +8,11 @@ class GameObject:
         self.sprite = pygame.image.load(spritePath)
         self.pos = pos
         self.col = col
+        self.aceleracion = Vector2(0, 0)
+        self.desaceleracion = Vector2(0, 0)
+
+    def add_aceleracion(self, acc:Vector2):
+        self.aceleracion += acc
 
     def draw(self, world):
         world.blit(self.sprite, (self.pos.x, self.pos.y))

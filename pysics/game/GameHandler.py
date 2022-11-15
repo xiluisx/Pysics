@@ -60,6 +60,8 @@ class Game:
 
         # TODO: Actualiza los graficos de los objetos con su posicion
         for obj in self.objects:
+            obj.pos += obj.aceleracion
+            obj.aceleracion -= obj.desaceleracion
             obj.col.pos = obj.pos
             obj.draw(self.screen)
 
