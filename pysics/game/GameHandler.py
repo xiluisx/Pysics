@@ -1,6 +1,10 @@
 import sys
 import os
 from threading import Thread
+
+from pysics.physics.CircleCollider import CircleCollider
+from pysics.physics.SquareCollider import SquareCollider
+
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 
 from pygame import QUIT
@@ -36,9 +40,10 @@ class Game:
         thread = Thread(target=self.__init)
         thread.start()
 
-    def add_object(self, spritePath, pos: Vector2 = Vector2(0, 0)):
-        newObj = GameObject(spritePath, pos)
+    def add_object(self, spritePath, col, pos: Vector2 = Vector2(0, 0)):
+        newObj = GameObject(spritePath,col, pos)
         self.objects.append(newObj)
+        self.PhysicsHandler.colliders.append(newObj.col)
         return newObj
 
     def add_update(self, event):
@@ -51,8 +56,11 @@ class Game:
         for i in self.updateEvents:
             i()
 
+        self.PhysicsHandler.update()
+
         # TODO: Actualiza los graficos de los objetos con su posicion
         for obj in self.objects:
+            obj.col.pos = obj.pos
             obj.draw(self.screen)
 
         # TODO: Corre update() en el PhysicsHandler
