@@ -7,6 +7,7 @@ class CircleCollider:
         self.object = None
         self.radius = radius
         self.pos = pos
+        self.static = False
 
     # TODO: Revisar colisiones con otros circulos dependiendo de la distancia entre los dos
     def is_colliding(self, other):
@@ -18,7 +19,6 @@ class CircleCollider:
             raiz = math.sqrt(sumx + sumy)
             # TODO: Si distancia es menor a ambos radios sumados estan chocando
             if raiz < self.radius + other.radius:
-                print("Colision")
                 return True
             return
         return False # Cambiar esto

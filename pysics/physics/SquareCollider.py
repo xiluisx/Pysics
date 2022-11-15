@@ -6,6 +6,7 @@ class SquareCollider:
         self.pos = pos
         self.height = height
         self.width = width
+        self.static = False
 
     # TODO: Revisar colisiones con otros cuadrados dependiendo de la distancia entre los dos
     def is_colliding(self, other):
