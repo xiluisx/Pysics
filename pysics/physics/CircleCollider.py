@@ -3,7 +3,8 @@ from pysics.math.Vector2 import Vector2
 
 
 class CircleCollider:
-    def __init__(self, radius:float, pos:Vector2):
+    def __init__(self, obj, radius:float, pos:Vector2):
+        self.obj = obj
         self.radius = radius
         self.pos = pos
 
