@@ -10,7 +10,7 @@ class SquareCollider:
     # TODO: Revisar colisiones con otros cuadrados dependiendo de la distancia entre los dos
     def is_colliding(self, other):
         # TODO: Revisa que el otro objeto sea circulo o cuadrado
-        if other is SquareCollider:
+        if type(other) is SquareCollider:
             points = [
                 self.pos,
                 self.pos + Vector2(self.width, 0),
