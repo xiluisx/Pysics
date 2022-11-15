@@ -9,4 +9,5 @@ class Handler:
                 if other == col:
                     continue
                 else:
-                    col.is_colliding(other) # TODO: Hacer que se choque cuando colisione
+                   if col.is_colliding(other): # TODO: Hacer que se choque cuando colisiones
+                       col.object.aceleracion = Vector2(-col.object.aceleracion.x, -col.object.aceleracion.y)
