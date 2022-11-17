@@ -19,7 +19,7 @@ class SquareCollider:
                 self.pos + Vector2(self.width, self.height)
             ]
             for point in points:
-                if other.x < point.x < other.x + other.width and other.y < point.y < other.y + other.height:
+                if other.pos.x < point.x < other.pos.x + other.width and other.pos.y < point.y < other.pos.y + other.height:
                     return True
 
             return False

@@ -10,4 +10,7 @@ obj = game.add_object(os.path.dirname(__file__) + "\img\RedBall.png", CircleColl
 obj.col.object = obj
 pared1 = game.add_object(os.path.dirname(__file__) + "\img\Background.png", SquareCollider(Vector2(0, 0), 30,1000))
 pared1.col.static = True
-obj.add_aceleracion(Vector2(0, -10))
+
+pared2 = game.add_object(os.path.dirname(__file__) + "\img\Background.png", SquareCollider(Vector2(0,500), 30, 1000), Vector2(0,500))
+pared2.col.static = True
+obj.add_aceleracion(Vector2(2, 10))
