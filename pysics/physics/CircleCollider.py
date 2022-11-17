@@ -23,5 +23,9 @@ class CircleCollider:
             return False
         elif type(other) is SquareCollider:
             # TODO: Colisiona con cuadrado
-            return
-        return False # Cambiar esto
+            sumx = (self.pos.x - other.pos.x)**2
+            sumy = (self.pos.y - other.pos.y)**2
+            raiz = math.sqrt(sumx + sumy)
+            if raiz < other.width*other.height: 
+                return
+            return False # Cambiar esto
