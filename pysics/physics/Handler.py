@@ -11,7 +11,7 @@ class Handler:
                 if other == col:
                     continue
                 else:
-                    if col.is_colliding(other) and not col.is_static:
-                        if not other.is_static:
+                    if col.is_colliding(other) and not col.static:
+                        if not other.static:
                             other.object.aceleracion += col.object.aceleracion
                         col.object.aceleracion = Vector2(-col.object.aceleracion.x, -col.object.aceleracion.y)
