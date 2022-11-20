@@ -8,6 +8,7 @@ class CircleCollider:
         self.radius = radius
         self.pos = pos
         self.static = False
+        self.mass = 10
 
     def is_colliding(self, other):
         # Revisa que el otro objeto sea circulo o cuadrado
@@ -24,7 +25,6 @@ class CircleCollider:
             # TODO: Mide distancia de centros
             centroCirculo = Vector2(self.pos.x + self.radius, self.pos.y + self.radius)
             centroCuadrado = Vector2(other.pos.x + (other.width/2), other.pos.y + (other.height/2))
-
             sumx = (centroCirculo.x - centroCuadrado.x) ** 2
             sumy = (centroCirculo.y - centroCuadrado.y) ** 2
             dist = math.sqrt(sumx + sumy)
