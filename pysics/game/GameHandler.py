@@ -2,9 +2,6 @@ import sys
 import os
 from threading import Thread
 
-from pysics.physics.CircleCollider import CircleCollider
-from pysics.physics.SquareCollider import SquareCollider
-
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 
 from pygame import QUIT
@@ -41,7 +38,7 @@ class Game:
         thread.start()
 
     def add_object(self, spritePath, col, pos: Vector2 = Vector2(0, 0)):
-        newObj = GameObject(spritePath,col, pos)
+        newObj = GameObject(spritePath, col, pos)
         self.objects.append(newObj)
         self.PhysicsHandler.colliders.append(newObj.col)
         return newObj
@@ -51,7 +48,7 @@ class Game:
 
     def update(self):
         frame_per_sec = pygame.time.Clock()
-        self.screen.fill((0,0,0))
+        self.screen.fill((0, 0, 0))
 
         for i in self.updateEvents:
             i()
