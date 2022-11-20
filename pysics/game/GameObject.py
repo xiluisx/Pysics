@@ -10,6 +10,7 @@ class GameObject:
         self.col = col
         self.aceleracion = Vector2(0, 0)
         self.desaceleracion = Vector2(0, 0)
+        self.name = ""
 
     def add_aceleracion(self, acc:Vector2):
         self.aceleracion += acc
