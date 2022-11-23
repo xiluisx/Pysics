@@ -40,7 +40,7 @@ class CircleCollider:
             if circleDistance.y <= (other.height / 2):
                 return True
 
-            cornerDistance_sq = (circleDistance.x - other.width / 2) ^ 2 + (circleDistance.y - other.height / 2) ^ 2
+            cornerDistance_sq = (circleDistance.x - other.width / 2)**2 + (circleDistance.y - other.height / 2)**2
 
-            return cornerDistance_sq <= (self.radius ^ 2)
+            return cornerDistance_sq <= (self.radius**2)
         return False
