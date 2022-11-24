@@ -25,7 +25,7 @@ pared4 = game.add_object(os.path.dirname(__file__) + "\img\Background2.png", Squ
 pared4.col.static = True
 pared4.col.object = pared4
 
-for i in range(0,50):
+for i in range(0,10):
     randX = random.randint(400, 500)
     randY = random.randint(200,300)
     newObj = game.add_object(os.path.dirname(__file__) + "\img\RedBall.png", CircleCollider(10, Vector2(randX,randY)), Vector2(randX,randY))
